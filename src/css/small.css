@@ -1,0 +1,36 @@
+@media screen and (max-width: 50em) {
+  #side-menu-button {
+    display: none;
+  }
+
+  #menu-button {
+    display: block;
+    &::after {
+      content: "\2630";
+    }
+    &.active::after {
+      content: "\00D7";
+    }
+  }
+
+  .menu-mobile.active {
+    display: block;
+    border-bottom: 1px solid var(--border-color);
+    & > ul > li {
+      text-align: center;
+    }
+  }
+
+  .app-content {
+    display: block;
+    & > .side-menu {
+      display: none;
+      &.active {
+        display: none;
+      }
+    }
+    & > .page-content {
+      height: auto;
+    }
+  }
+}
