@@ -13,7 +13,7 @@ export default defineConfig({
         platform: resolve(__dirname, "src/platform/index.html"),
         "wish-list": resolve(__dirname, "src/wish-list/index.html"),
         favorites: resolve(__dirname, "src/favorites/index.html"),
-        genres: resolve(__dirname, "src/genre/index.html"),
+        genres: resolve(__dirname, "src/genres/index.html"),
         /* ANY OTHER ROUTE WILL BE WRITTEN HERE */
       },
     },
