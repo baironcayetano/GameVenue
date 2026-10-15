@@ -2,7 +2,7 @@ const RAWG_KEY = import.meta.env.VITE_RAWG_KEY;
 
 /** returns top game */
 export const getTopGame = async () => {
-  if(!RAWG_KEY){
+  if (!RAWG_KEY) {
     return null;
   }
 
@@ -24,7 +24,7 @@ export const getTopGame = async () => {
 
 /** returns platforms */
 export const getPlatforms = async () => {
-  if(!RAWG_KEY){
+  if (!RAWG_KEY) {
     return null;
   }
 
@@ -39,5 +39,4 @@ export const getPlatforms = async () => {
     console.error("Failed to load game information");
     return null;
   }
-
-}
+};

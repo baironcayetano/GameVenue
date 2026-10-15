@@ -1,4 +1,9 @@
-import { includeFooter, includeGenres, includeHeader, includePlatforms } from "./partials";
+import {
+  includeFooter,
+  includeGenres,
+  includeHeader,
+  includePlatforms,
+} from "./partials";
 
 includeHeader();
 includeFooter();

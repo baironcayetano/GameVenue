@@ -221,7 +221,7 @@ input[type="text"] {
   padding: 10px;
 }
 
-.hero-content > .trending-game{
+.hero-content > .trending-game {
   background-color: goldenrod;
   color: black;
   font-weight: bolder;
@@ -231,14 +231,15 @@ input[type="text"] {
 }
 
 .centered-button > .link-button {
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-    padding: 10px;
-  }
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+}
 
 /** PLATFORMS COMPONENT **/
-.platform-cards, .genres-cards{
+.platform-cards,
+.genres-cards {
   list-style: none;
   padding-inline-start: 0;
   display: grid;
@@ -248,7 +249,8 @@ input[type="text"] {
   gap: 10px;
 }
 
-.platform-cards > .platform-card > a, .genres-cards > .genres-card > a{
+.platform-cards > .platform-card > a,
+.genres-cards > .genres-card > a {
   width: 100%;
   grid-column: span 1;
   display: flex;
