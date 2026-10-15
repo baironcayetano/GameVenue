@@ -3,76 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Bairon Cayetano">
-    <meta name="description" content="Search and discover games in your prefered platform. PlayStation, Xbox, Nintendo, PC or Mobile" id="meta-description">
+    <meta name="author" content="Bairon Cayetano" />
+    <meta
+      name="description"
+      content="Search and discover games in your prefered platform. PlayStation, Xbox, Nintendo, PC or Mobile"
+      id="meta-description"
+    />
     <title id="app-title">GameVenue</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/css/large.css">
-    <link rel="stylesheet" href="/css/small.css">
+    <link rel="stylesheet" href="/css/large.css" />
+    <link rel="stylesheet" href="/css/small.css" />
 
     <!-- Scripts -->
+    <script type="module" src="/js/main.js"></script>
   </head>
   <body>
     <header>
-        <div class="header-left">
-          <!-- Sidebar Menu-->
-          <button id="side-menu-button" title="side menu">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm280-80h280v-560H480v560Z"/></svg>
-          </button>
+      <div class="header-left">
+        <!-- Sidebar Menu-->
+        <button id="side-menu-button" title="side menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="currentColor"
+          >
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm280-80h280v-560H480v560Z"
+            />
+          </svg>
+        </button>
 
-          <!-- Page Logo -->
-          <div class="logo-container">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-540 360-660v-220h240v220L480-540Zm180 180L540-480l120-120h220v240H660Zm-580 0v-240h220l120 120-120 120H80ZM360-80v-220l120-120 120 120v220H360Zm120-574 40-40v-106h-80v106l40 40ZM160-440h106l40-40-40-40H160v80Zm280 280h80v-106l-40-40-40 40v106Z"/></svg>
-            <span>GameVenue</span>
-          </div>
+        <!-- Page Logo -->
+        <div class="logo-container">
+          <span>GameVenue</span>
         </div>
+      </div>
 
-        <div class="header-right">
-
-          <button id="search-button" title="search">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
-          </button>
+      <div class="header-right">
+        <button id="search-button" title="search">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="currentColor"
+          >
+            <path
+              d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+            />
+          </svg>
+        </button>
 
         <!-- Mobile Menus -->
-          <button id="menu-button" title="menu">
-            <span>&#9776;</span>
-            <span>&#10005;</span>
-          </button>
-        </div>
+        <button id="menu-button" title="menu">
+          <span>&#9776;</span>
+          <span>&#10005;</span>
+        </button>
+      </div>
     </header>
     <nav class="menu-mobile" id="menu-mobile">
       <!-- Navigation links -->
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/platform?=current">Platform</a></li>
-        <li><a href="/gender">Genders</a></li>
+        <li><a href="/platform?=current">Platforms</a></li>
+        <li><a href="/genres">Genres</a></li>
         <li><a href="/favorites">My Favorites</a></li>
         <li><a href="/wish-list">My Wish List</a></li>
       </ul>
     </nav>
     <main>
-      <section class="menu-landscape" id="menu-landscape">
+      <section class="side-menu" id="side-menu">
         <!-- Navigation links -->
-         <h3>Menu</h3>
-         <ul>
-          <li><a href="/gender">Genders</a></li>
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="/genres">Genres</a></li>
           <li><a href="/favorites">My Favorites</a></li>
           <li><a href="/wish-list">My Wish List</a></li>
         </ul>
         <h3>Platforms</h3>
         <ul>
-            <li><a href="/platform?os=windows">Windows</a></li>
-            <li><a href="/platform?os=ps">PlayStation</a></li>
-            <li><a href="/platform?os=xbox">Xbox</a></li>
-            <li><a href="/platform?os=nintendo">Nintendo</a></li>
-            <li><a href="/platform?os=mobile">Mobile</a></li>
+          <li><a href="/platform?os=windows">Windows</a></li>
+          <li><a href="/platform?os=ps">PlayStation</a></li>
+          <li><a href="/platform?os=xbox">Xbox</a></li>
+          <li><a href="/platform?os=nintendo">Nintendo</a></li>
+          <li><a href="/platform?os=mobile">Mobile</a></li>
         </ul>
       </section>
       <section class="page-content">
         <h1>Test!</h1>
         <p>This works</p>
-      </section> 
+      </section>
     </main>
     <footer></footer>
   </body>

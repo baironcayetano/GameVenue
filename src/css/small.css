@@ -1,19 +1,30 @@
-@media screen and (max-width:50em){
-    #side-menu-button{
+@media screen and (max-width: 50em) {
+  #side-menu-button {
+    display: none;
+  }
+
+  #menu-button {
+    display: block;
+  }
+
+  .menu-mobile.active{
+    display: block;
+    border-bottom: 1px solid var(--border-color);
+     & > ul > li {
+        text-align: center;
+     }
+  }
+
+  main {
+    display: block;
+    & > .side-menu {
+      display: none;
+      &.active {
         display: none;
+      }
     }
-
-    #menu-button{
-        display: block;
+    & > .page-content {
+      height: auto;
     }
-
-    main{
-        display: block;
-        & > .menu-landscape{
-            display: none;
-        }
-        & > .page-content{
-            height: auto;
-        }
-    }
+  }
 }
