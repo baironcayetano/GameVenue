@@ -1,3 +1,4 @@
-import { loadHeaderFunctionality } from "./utils";
+import { includeFooter, includeHeader } from "./partials";
 
-loadHeaderFunctionality();
+includeHeader();
+includeFooter();

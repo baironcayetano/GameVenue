@@ -21,7 +21,8 @@
     }
   }
 
-  .app-content {
+  .app-content,
+  .app-content.active {
     display: block;
     & > .side-menu {
       display: none;
@@ -32,5 +33,9 @@
     & > .page-content {
       height: auto;
     }
+  }
+
+  dialog:open {
+    width: 90%;
   }
 }
