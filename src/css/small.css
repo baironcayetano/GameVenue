@@ -25,9 +25,9 @@
     display: block;
     & > .side-menu {
       display: none;
-      &.active {
-        display: none;
-      }
+    }
+    &.active > .side-menu.active {
+      display: none;
     }
     & > .page-content {
       height: auto;
