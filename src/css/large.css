@@ -16,11 +16,23 @@ body {
 }
 
 /** ELEMENTS **/
-button {
+button,
+.link-button {
   border: 1px solid var(--border-color);
   background-color: transparent;
+  color: black;
   cursor: pointer;
   font-size: 20px;
+}
+
+.centered-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-button {
+  text-decoration: none;
 }
 
 /**-------- HEADER ELEMENT ----------- **/
@@ -118,7 +130,7 @@ header {
     display: block;
     grid-column: span 5;
     height: 90dvh;
-    padding: 10px;
+    padding: 20px 30px;
     max-height: 90dvh;
     overflow-y: auto;
   }
@@ -188,12 +200,78 @@ input[type="text"] {
   padding-inline-start: 10px;
 }
 
+/** HERO **/
+.hero {
+  position: relative;
+  width: 100%;
+  background-color: var(--dialog-background-color);
+}
+
+.hero > .hero-image {
+  width: 100%;
+  height: 100%;
+}
+
+.hero > .hero-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(66, 65, 65, 0.589);
+  color: white;
+  padding: 10px;
+}
+
+.hero-content > .trending-game{
+  background-color: goldenrod;
+  color: black;
+  font-weight: bolder;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.centered-button > .link-button {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+/** PLATFORMS COMPONENT **/
+.platform-cards, .genres-cards{
+  list-style: none;
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.platform-cards > .platform-card > a, .genres-cards > .genres-card > a{
+  width: 100%;
+  grid-column: span 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background-color: rgb(34, 34, 34);
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
 /** DIALOG **/
 dialog:open {
   width: 80%;
   position: fixed;
   top: 20dvh;
   border: 1px solid var(--border-color);
+  background-color: white;
   box-shadow: 0 5px 10px #ddd;
 }
 
