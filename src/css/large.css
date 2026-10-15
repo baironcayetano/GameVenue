@@ -159,3 +159,87 @@ header {
     background-color: whitesmoke;
   }
 }
+
+form {
+  padding: 20px 10px;
+}
+
+form > .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding: 20px 0;
+  gap: 10px;
+}
+
+label,
+input {
+  width: 100%;
+  font-size: 25px;
+}
+
+input {
+  border: 1px solid var(--border-color);
+}
+
+input[type="text"] {
+  padding: 5px;
+  padding-inline-start: 10px;
+}
+
+/** DIALOG **/
+dialog:open {
+  width: 80%;
+  position: fixed;
+  top: 20dvh;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 5px 10px #ddd;
+}
+
+.dialog-header,
+.dialog-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dialog-header {
+  margin: 0 10px;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dialog-footer {
+  justify-content: flex-end;
+  gap: 10px;
+
+  & > button {
+    padding: 10px;
+  }
+
+  & > button.accept {
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    border-radius: 5px;
+  }
+
+  & > button.cancel {
+    background-color: var(--active-color);
+    color: white;
+    font-weight: bolder;
+    border-radius: 5px;
+  }
+}
+
+/** FOOTER ELEMENT **/
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--dialog-background-color);
+  color: rgb(61, 61, 61);
+}

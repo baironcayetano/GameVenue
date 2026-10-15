@@ -1,0 +1,86 @@
+import {
+  appendTemplate,
+  loadDialogFuntionality,
+  loadHeaderFunctionality,
+  loadTemplate,
+  renderWithTemplate,
+} from "./utils";
+
+/** Loads side menu */
+const includeSideMenu = async () => {
+  const sideElement = document.querySelector("#side-menu");
+  const sideMenuTemplate = await loadTemplate("../partials/sidemenu.html");
+
+  if (sideMenuTemplate) {
+    renderWithTemplate(sideMenuTemplate, sideElement);
+    return;
+  }
+
+  //error
+  renderWithTemplate("<span>Failed loading menu</span>", sideElement);
+};
+
+/** Loads header menu */
+const includeMobileMenu = async () => {
+  const mobileMenuElement = document.querySelector("#menu-mobile");
+  const mobileMenuTemplate = await loadTemplate("../partials/mobilemenu.html");
+
+  if (mobileMenuElement) {
+    renderWithTemplate(mobileMenuTemplate, mobileMenuElement);
+    return;
+  }
+
+  //error
+  renderWithTemplate("<span>Failed loading menu</span>", mobileMenuElement);
+};
+
+//Load navigation menus
+export const includeNavigation = async () => {
+  await includeSideMenu();
+  await includeMobileMenu();
+};
+
+export const includeHeader = async () => {
+  const header = document.querySelector("header");
+  const headerTemplate = await loadTemplate("../partials/header.html");
+
+  if (headerTemplate) {
+    renderWithTemplate(headerTemplate, header);
+    await includeNavigation();
+    await includeSearchDialog();
+    loadDialogFuntionality();
+    loadHeaderFunctionality();
+    return;
+  }
+
+  //error
+  renderWithTemplate("<span>Failed loading header</span>", header);
+};
+
+/** Includes the footer partials dinamically */
+export const includeFooter = async () => {
+  const footer = document.querySelector("footer");
+  const footerTemplate = await loadTemplate("../partials/footer.html");
+
+  if (footerTemplate) {
+    renderWithTemplate(footerTemplate, footer);
+    return;
+  }
+
+  //error
+  renderWithTemplate("<p>Failed loading footer</p>", footer);
+};
+
+export const includeSearchDialog = async () => {
+  const main = document.querySelector("main");
+  const dialogElement = document.createElement("dialog");
+  const dialogTemplate = await loadTemplate("../partials/search-dialog.html");
+
+  //error
+  if (!dialogTemplate) {
+    return;
+  }
+
+  renderWithTemplate(dialogTemplate, dialogElement);
+  appendTemplate(dialogElement, main);
+};
