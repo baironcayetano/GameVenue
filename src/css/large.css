@@ -91,26 +91,30 @@ header {
 }
 
 /**----- PAGE LAYOUT -----**/
-main {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  align-items: center;
-  justify-content: center;
+.app-content {
+  display: block;
   width: 100%;
+
+  &.active {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
 
   & > .side-menu {
     display: none;
+  }
+
+  &.active > .side-menu.active {
+    display: block;
     grid-column: span 1;
     height: 90dvh;
     border-right: 1px solid var(--border-color);
     padding: 10px;
   }
 
-  & > .side-menu.active {
-    display: block;
-  }
-
-  & > .page-content {
+  &.active > .page-content {
     display: block;
     grid-column: span 5;
     height: 90dvh;
@@ -118,9 +122,17 @@ main {
     max-height: 90dvh;
     overflow-y: auto;
   }
+
+  & > .page-content {
+    display: block;
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+  }
 }
 
-.side-menu > ul, .menu-mobile > ul {
+.side-menu > ul,
+.menu-mobile > ul {
   list-style: none;
   padding-inline-start: 0;
 

@@ -5,17 +5,23 @@
 
   #menu-button {
     display: block;
+    &::after {
+      content: "\2630";
+    }
+    &.active::after {
+      content: "\00D7";
+    }
   }
 
-  .menu-mobile.active{
+  .menu-mobile.active {
     display: block;
     border-bottom: 1px solid var(--border-color);
-     & > ul > li {
-        text-align: center;
-     }
+    & > ul > li {
+      text-align: center;
+    }
   }
 
-  main {
+  .app-content {
     display: block;
     & > .side-menu {
       display: none;
