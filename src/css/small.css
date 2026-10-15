@@ -1,0 +1,19 @@
+@media screen and (max-width:50em){
+    #side-menu-button{
+        display: none;
+    }
+
+    #menu-button{
+        display: block;
+    }
+
+    main{
+        display: block;
+        & > .menu-landscape{
+            display: none;
+        }
+        & > .page-content{
+            height: auto;
+        }
+    }
+}
