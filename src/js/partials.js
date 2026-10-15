@@ -87,32 +87,30 @@ export const includeSearchDialog = async () => {
 };
 
 export const includePlatforms = async () => {
-   const main = document.querySelector(".page-content");
-   const platformSections = document.createElement("div");
-         platformSections.classList.add("platforms-secition");
-         platformSections.id = "platforms";
-   
-   const template = await loadTemplate("../partials/platforms.html");
-   if(!template){
-     return
-   }
+  const main = document.querySelector(".page-content");
+  const platformSections = document.createElement("div");
+  platformSections.classList.add("platforms-secition");
+  platformSections.id = "platforms";
 
-   renderWithTemplate(template, platformSections)
-   appendTemplate(platformSections, main);
+  const template = await loadTemplate("../partials/platforms.html");
+  if (!template) {
+    return;
+  }
 
-} 
+  renderWithTemplate(template, platformSections);
+  appendTemplate(platformSections, main);
+};
 
 export const includeGenres = async () => {
-   const main = document.querySelector(".page-content");
-   const genreSection = document.createElement("div");
-   genreSection.classList.add("genre-section");
+  const main = document.querySelector(".page-content");
+  const genreSection = document.createElement("div");
+  genreSection.classList.add("genre-section");
 
-   const template = await loadTemplate("../partials/genres.html");
-   if(!template){
-      return
-   }
+  const template = await loadTemplate("../partials/genres.html");
+  if (!template) {
+    return;
+  }
 
-   renderWithTemplate(template, genreSection);
-   appendTemplate(genreSection, main);
-
-} 
+  renderWithTemplate(template, genreSection);
+  appendTemplate(genreSection, main);
+};
