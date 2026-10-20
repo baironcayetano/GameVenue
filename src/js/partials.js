@@ -1,4 +1,4 @@
-import { getPlatforms } from "./rawg-api";
+import { getGenres, getPlatforms } from "./rawg-api";
 import {
   appendTemplate,
   loadDialogFuntionality,
@@ -101,16 +101,44 @@ export const includePlatforms = async () => {
   appendTemplate(platformSections, main);
 };
 
+/** Inserts a template in the HTML and then uses it to render the genres
+ * @param {Array<any>} data
+ * @param {HTMLElement} parentElement
+ */
+const useGenresTemplate = (data, parentElement) => {
+  const parent = parentElement.querySelector("#genres-cards");
+  const template = parentElement.querySelector("#genres-template");
+  if (template && parent) {
+    data.forEach((genre) => {
+      //clones the template
+      //after copying the elements, inserts the new node
+      //to the parent element
+      const clone = template.content.cloneNode(true);
+      const a = clone.querySelector("a");
+      a.href = `/genres/?name=${genre.slug}`;
+      a.textContent = genre.name;
+      parent.appendChild(clone);
+    });
+  }
+};
+
 export const includeGenres = async () => {
   const main = document.querySelector(".page-content");
   const genreSection = document.createElement("div");
   genreSection.classList.add("genre-section");
+
+  const genres = await getGenres();
+  const GENRES_LIMIT = 15;
+
+  if (genres.length > GENRES_LIMIT) {
+    genres.splice(GENRES_LIMIT);
+  }
 
   const template = await loadTemplate("../partials/genres.html");
   if (!template) {
     return;
   }
 
-  renderWithTemplate(template, genreSection);
+  renderWithTemplate(template, genreSection, genres, useGenresTemplate);
   appendTemplate(genreSection, main);
 };
