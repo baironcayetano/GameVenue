@@ -16,6 +16,10 @@ body {
 }
 
 /** ELEMENTS **/
+h1 {
+  font-size: 25px;
+}
+
 button,
 .link-button {
   border: 1px solid var(--border-color);
@@ -262,7 +266,7 @@ input[type="text"] {
   color: white;
   padding: 10px;
   font-size: 20px;
-  text-align: center;
+  text-align: start;
   border-radius: 5px;
   text-decoration: none;
 }
