@@ -26,10 +26,5 @@
  **/
  export function isMobile(){
  	const os = detectOs().toLowerCase();
-
- 	if(os.includes("android") || os.includes("iphone") || os.includes("ipad") || os.includes("ipod")){
- 		return true;
- 	}
-
- 	return false;
+ 	return (os === "android" || os === "ios");
  }
