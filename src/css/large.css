@@ -1,14 +1,35 @@
 :root {
-  --border-color: #ddd;
-  --dialog-background-color: whitesmoke;
+  color-scheme: light dark;
+  --border-color: light-dark(#ddd, gray);
   --hero-background-color: #13131a;
-  --text-color: black;
+  --text-color: light-dark(black, white);
+  --hover-bg-color: light-dark(whitesmoke, gray);
+  --hover-color: light-dark(black, white);
   --alterantive-text-color: white;
   --active-color: crimson;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/** Border color for elements with border **/
+header,
+nav,
+dialog {
+  border-color: light-dark(#121212, #ddd);
+}
+
+/** Color for lists  **/
+ul > li > a {
+  color: light-dark(black, white);
+}
+
+ul > li:hover {
+  background-color: var(--hover-bg-color);
+  & > a {
+    color: var(--hover-color);
+  }
 }
 
 body {
@@ -24,7 +45,7 @@ button,
 .link-button {
   border: 1px solid var(--border-color);
   background-color: transparent;
-  color: black;
+  color: var(--text-color);
   cursor: pointer;
   font-size: 20px;
 }
@@ -33,6 +54,7 @@ button,
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
 }
 
 .link-button {
@@ -162,17 +184,11 @@ header {
     & > a {
       width: 100%;
       text-decoration: none;
-      color: var(--text-color);
     }
 
     & > a.active {
       color: var(--active-color);
     }
-  }
-
-  & > li:hover {
-    cursor: pointer;
-    background-color: whitesmoke;
   }
 }
 
@@ -200,8 +216,11 @@ input {
 }
 
 input[type="text"] {
+  background-color: light-dark(whitesmoke, gray);
+  color: var(--text-color);
   padding: 5px;
   padding-inline-start: 10px;
+  border-radius: 10px;
 }
 
 /** HERO **/
@@ -277,8 +296,7 @@ dialog:open {
   position: fixed;
   top: 20dvh;
   border: 1px solid var(--border-color);
-  background-color: white;
-  box-shadow: 0 5px 10px #ddd;
+  box-shadow: 0 2px 8px var(--border-color);
 }
 
 .dialog-header,
@@ -303,8 +321,8 @@ dialog:open {
   }
 
   & > button.accept {
-    background-color: black;
-    color: white;
+    background-color: transparent;
+    color: var(--text-color);
     font-weight: bolder;
     border-radius: 5px;
   }
@@ -324,6 +342,7 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: var(--dialog-background-color);
-  color: rgb(61, 61, 61);
+  background-color: light-dark(whitesmoke, transparent);
+  color: var(--text-color);
+  border-top: 1px solid var(--border-color);
 }

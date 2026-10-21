@@ -1,4 +1,9 @@
-/** loads Hero Container */
+/**
+ * Renders the given game in a hero element.
+ * To accomplish this, it uses the hero template,
+ * copies the node and updates the image, title and link of the element
+ * and then adds it to the hero container.
+ */
 export const loadHero = (game) => {
   const hero = document.querySelector("#hero");
   const heroTemplate = document.querySelector("#hero-template");
