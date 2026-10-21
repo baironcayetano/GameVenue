@@ -13,7 +13,6 @@ async function initPage() {
 
   const topGame = await getTopGame();
   loadHero(topGame);
-
   includeGenres();
   includePlatforms();
 }
